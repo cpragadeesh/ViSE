@@ -34,7 +34,7 @@ def upload_kitten(client):
 	print("Uploading image... ")
 	#image = client.upload_from_path(image_path, config=config, anon=False)
         for img in os.listdir(image_path):
-                if img.endswith('jpg'):
+                if img.endswith('jpg') or img.endswith('png'):
                         print "Uploading path " + image_path + img 
                         image = client.upload_from_path(image_path + img, config=config, anon=False)
                         urllist.append(image['link'])
@@ -43,9 +43,12 @@ def upload_kitten(client):
 
 
 # If you want to run this as a standalone script
-if __name__ == "__main__":
+def upload():
 	client = authenticate()
 	urllist = upload_kitten(client)
 
-	print("Image was posted! Go check your images you sexy beast!")
         print urllist
+        
+        return urllist
+
+upload()
