@@ -1,7 +1,0 @@
-import urllib2
-
-p = urllib2.urlopen("https://www.google.co.in/searchbyimage?hl=en&biw=1438&bih=736&site=webhp&image_url=http://i.imgur.com/jlgB5Rr.png&sa=X&ei=j6SOVYjgIdaiugSPtZgQ&ved=0CBkQ9Q8oAA")
-
-page = p.read()
-
-print page
